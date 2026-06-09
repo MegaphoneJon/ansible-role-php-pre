@@ -42,8 +42,6 @@
     ondrej_repo_signed_by: "{{ keyserver_response.content | regex_replace('\nComment.+\n','\n') }}"
   when: ansible_facts.distribution == "Ubuntu"
 
-- debug: var=ondrej_repo_signed_by
-
 - name: Set data for Ondrej's repo (Debian).
   ansible.builtin.set_fact:
     ondrej_repo_uri: "https://packages.sury.org/php"
